@@ -675,6 +675,8 @@ export class BuildingReassessmentComponent implements OnInit {
       this.bldgReassessment.get['strDescG'].controls['flr8'].reset();
     }
   }
+
+  cp: boolean;
 }
 
 export default BuildingReassessmentComponent

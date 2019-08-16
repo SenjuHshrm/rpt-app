@@ -6,7 +6,7 @@
       <span *ngIf='nonAuth()'>Menu</span>
       <span *ngIf='loggedIn()'>{{ userFullName }}</span>-->
       <span class='w-150'>Menu</span>
-      <span class='navLogoMT'><img src='../assets/SPCLOGO.png'></span>
+      <span class='navLogoMT uSel'><img src='../assets/SPCLOGO.png'></span>
     </mat-toolbar>
     <mat-nav-list *ngIf='nonAuth()' (click)="drawer.toggle()">
       <a mat-list-item routerLink="/login">Login</a>
@@ -24,9 +24,9 @@
       </div>
       <a mat-list-item (click)="ltLinks = !ltLinks; xpandLtLinks()" ng-model="show">
         <div>Land Tax</div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-icon *ngIf="!ltLinks">expand_more</mat-icon>
-        <mat-icon *ngIf="ltLinks">expand_less</mat-icon>
+        <div class="uSel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <mat-icon *ngIf="!ltLinks" class="uSel">expand_more</mat-icon>
+        <mat-icon *ngIf="ltLinks" class="uSel">expand_less</mat-icon>
       </a>
 
       <!--<div [ngClass]="{ 'show': ltLinks, 'hide': !ltLinks }">
@@ -43,13 +43,13 @@
       <mat-accordion>
         <mat-expansion-panel class="mat-elevation-z0" [expanded]='expandLt'>
           <a mat-list-item (click)='drawer.toggle(); gotoClearance();' class='fsze'>
-            <mat-icon>arrow_right</mat-icon>&nbsp;Clearance
+            <mat-icon class="uSel">arrow_right&nbsp;</mat-icon>Clearance
           </a>
           <a mat-list-item class='fsze' (click)="drawer.toggle(); gotoRPTOP()">
-            <mat-icon>arrow_right</mat-icon>&nbsp;RPTOP
+            <mat-icon class="uSel">arrow_right&nbsp;</mat-icon>RPTOP
           </a>
           <a mat-list-item class='fsze' (click)="drawer.toggle(); gotoArrears()">
-            <mat-icon>arrow_right</mat-icon>&nbsp;Arrears
+            <mat-icon class="uSel">arrow_right&nbsp;</mat-icon>Arrears
           </a>
         </mat-expansion-panel>
       </mat-accordion>

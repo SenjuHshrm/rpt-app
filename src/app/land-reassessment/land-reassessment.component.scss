@@ -181,7 +181,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 15%;
 }
 
-.btnCon {
+.btnCon2 {
   height: 40px;
 }
 
@@ -403,4 +403,13 @@ tr {
   .btnW {
     width: 30%;
   }
+}
+
+.uSel {
+  user-select: none;
+}
+
+.btnCon {
+  width: 50%;
+  height: 50px;
 }

@@ -868,4 +868,5 @@ export class LandReassessmentComponent implements OnInit {
     })
   }
 
+  srchBtn: boolean;
 }

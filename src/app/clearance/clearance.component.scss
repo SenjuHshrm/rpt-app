@@ -21,7 +21,7 @@
   border: 1px solid #0063EA;
   border-radius: 4px;
   width: 60%;
-  height: 500px;
+  height: 610px;
   position: fixed;
   left: 20%;
   z-index: 900;
@@ -217,16 +217,15 @@ tr {
 }
 
 .ovrflw {
-  height: 400px;
+  height: 485px;
   width: 98%;
   margin: 0 auto;
-  margin-top: 10px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .clrnceTxt {
-  text-align: center;
+  text-align: justify;
 }
 
 .hrDashed {
@@ -476,4 +475,16 @@ tr {
 
 .text-center {
   text-align: center;
+}
+
+.btnCons {
+  background: #FFF; width: 100%; height: 50px;
+}
+
+.matFormField {
+  margin-bottom: -1.25em;
+}
+
+.fsize14 {
+
 }

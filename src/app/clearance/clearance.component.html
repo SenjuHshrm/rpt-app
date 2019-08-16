@@ -62,35 +62,39 @@
   <b>&nbsp;&nbsp;Clearance</b>
 </div>
 <div class='ovrflw'>
-<div class="clrnce">
+<div class="clrnce" style='font-size: 14px;'>
   <div class='container' fxLayout fxLayoutGap='10px'>
   </div>
   <div class='text-center'>
   <span>&nbsp;The latest payment of the tax of the above-described property is for the&nbsp;</span>
-  <mat-form-field>
+  <mat-form-field class="matFormField">
     <input id='input1' class="text-center" matInput type='text' [(ngModel)]='input1'>
   </mat-form-field>
+  <br>
   <span>&nbsp;total amount of &#x20B1;:&nbsp;</span>
-  <mat-form-field>
+  <mat-form-field class="matFormField">
     <input class="text-center" matInput type='text' [(ngModel)]='amount'>
   </mat-form-field>
+  <br>
    <span>&nbsp;acknowledge under Real Estate Tax Receipt No. CTO.&nbsp;</span>
-   <mat-form-field>
+   <mat-form-field class="matFormField">
      <input class="text-center" matInput type='text' [(ngModel)]='CTONo'>
    </mat-form-field>
+   <br>
    <span>&nbsp;dated:&nbsp;</span>
-   <mat-form-field>
+   <mat-form-field class="matFormField">
      <input class="text-center" matInput type='text' [matDatepicker]='cdated' [(ngModel)]='dated'>
      <mat-datepicker-toggle matSuffix [for]='cdated'></mat-datepicker-toggle>
      <mat-datepicker #cdated></mat-datepicker>
    </mat-form-field>
    <br>
    <span>&nbsp;This certification has been issued upon the request of&nbsp;</span>
-   <mat-form-field>
+   <mat-form-field class="matFormField">
      <input class="text-center" matInput type='text' [(ngModel)]='requestor'>
    </mat-form-field>
+   <br>
    <span>&nbsp;for the purpose of:&nbsp;</span>
-   <mat-form-field>
+   <mat-form-field class="matFormField">
     <mat-select [(ngModel)]='purpose'>
      <mat-option *ngFor='let prp of prps' [value]='prp.value'>{{ prp.viewVal }}</mat-option>
     </mat-select>
@@ -98,16 +102,16 @@
    </div>
    <br><div class="hrDashed"></div><br>
 
-   <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
+   <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px' style='font-size: 13px;'>
      <div fxFlex='50%'>
        <b><span>Verified by:&nbsp;</span></b>
-       <mat-form-field>
+       <mat-form-field class="matFormField">
          <input matInput type='text' class='text-transform' [(ngModel)]='encoder1'>
        </mat-form-field>
      </div>
      <div fxFlex='50%'>
        <b><span>Date:&nbsp;</span></b>
-       <mat-form-field>
+       <mat-form-field class="matFormField">
          <input class="text-center" matInput type='text' [matDatepicker]='currdate' [(ngModel)]='date'>
          <mat-datepicker-toggle matSuffix [for]='currdate'></mat-datepicker-toggle>
          <mat-datepicker #currdate></mat-datepicker>
@@ -115,26 +119,26 @@
      </div>
    </div>
 
-   <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
+   <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px' style='font-size: 13px;'>
      <div fxFlex='50%'>
        <b><span>Certification Fee:&nbsp;</span></b>
-       <mat-form-field>
+       <mat-form-field class="matFormField">
          <input class="text-center" matInput type='text' [(ngModel)]='certfee'>
        </mat-form-field>
      </div>
 
      <div fxFlex='50%'>
        <b><span>Amount:&nbsp;</span></b>
-       <mat-form-field>
+       <mat-form-field class="matFormField">
          <input class="text-center" matInput type='text' [(ngModel)]='amt'>
        </mat-form-field>
      </div>
   </div>
 
-  <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
+  <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px' style='font-size: 13px;'>
     <div fxFlex='50%'>
       <b><span>O.R. No.:&nbsp;&nbsp;&nbsp;</span></b>
-      <mat-form-field>
+      <mat-form-field class="matFormField">
         <input class="text-center" matInput type='text' [(ngModel)]='orNo'>
       </mat-form-field>
     </div>
@@ -143,22 +147,27 @@
   <br><div class="hrDashed"></div><br>
 
   <div class='container' fxLayout='column' fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
-    <mat-form-field fxFlex='100%'>
+    <mat-form-field fxFlex='100%' class="matFormField">
       <textarea matInput placeholder='Remarks' [(ngModel)]='remarks'></textarea>
     </mat-form-field>
   </div>
-  <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
-    <div fxFlex='25%'></div>
-    <div class='width: h-40' fxFlex='25%' (mousedown)='clckd=true' (mouseup)='clckd=false' (mouseleave)='clckd=false' (click)='genCl()'>
-      <button [ngClass]="{ 'genClBtnMd': clckd, 'genClBtn': !clckd }" mat-raised-button color='primary' type='button'>Generate Clearance</button>
+
+</div>
+</div>
+
+  <div class='btnCons'>
+    <div class='container' fxLayout fxLayoutGap='10px'>
+      <div fxFlex='25%'></div>
+      <div class='width: h-40' fxFlex='25%' (mousedown)='clckd=true' (mouseup)='clckd=false' (mouseleave)='clckd=false' (click)='genCl()'>
+        <button [ngClass]="{ 'genClBtnMd': clckd, 'genClBtn': !clckd }" mat-raised-button color='primary' type='button'>Generate Clearance</button>
+      </div>
+      <div class='width: h-40' (mousedown)='clrnceMD=true' (mouseup)='clrnceMD=false' (mouseleave)='clrnceMD=false' fxFlex='25%' (click)='clseClrnce()'>
+        <button [ngClass]="{ 'genClBtnMd': clrnceMD, 'genClBtn': !clrnceMD }" mat-raised-button type="button" name="button">Close</button>
+      </div>
     </div>
-    <div class='width: h-40' (mousedown)='clrnceMD=true' (mouseup)='clrnceMD=false' (mouseleave)='clrnceMD=false' fxFlex='25%' (click)='clseClrnce()'>
-      <button [ngClass]="{ 'genClBtnMd': clrnceMD, 'genClBtn': !clrnceMD }" mat-raised-button type="button" name="button">Close</button>
-    </div>
+    <div class="h"></div>
   </div>
-  <div class="h"></div>
-</div>
-</div>
+
 </div>
 
 <div>

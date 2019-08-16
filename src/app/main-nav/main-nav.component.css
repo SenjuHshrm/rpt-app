@@ -147,3 +147,7 @@ a:hover {
 .uprCaseName {
   text-transform: capitalize;
 }
+
+.uSel {
+  user-select: none;
+}

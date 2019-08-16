@@ -897,4 +897,6 @@ export class LandAssessmentComponent implements OnInit {
 	  this.impInf = new MatTableDataSource(imprInf)
 	  this.marketValue = new MatTableDataSource(mrktVal)
 	}
+
+  chckPin: boolean;
 }

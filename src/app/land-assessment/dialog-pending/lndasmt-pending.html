@@ -75,7 +75,7 @@
 	</div>
 	<div class="h2"></div>
 	<div mat-dialog-actions align='center'>
-		<div class="btnW" (mousedown)='cancelBtn=true' (mouseup)='cancelBtn=false'>
+		<div class="btnW" (mousedown)='cancelBtn=true' (mouseup)='cancelBtn=false' (mouseleave)='cancelBtn=false'>
 		<button mat-raised-button color='warn' (click)="close()" [ngClass]="{ 'mUp': !cancelBtn, 'mDwn': cancelBtn }">Cancel</button>
 		</div>
 		<div class='btnW' (mousedown)='okBtn=true' (mouseup)='okBtn=false'>

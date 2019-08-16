@@ -4,7 +4,7 @@
   <div class="mat-title-con">
   <mat-card-header>
     <mat-card-title>
-      <div class='fl'><img class='imgLogo' src='../assets/BUILDINGLOGOpng.png'></div>
+      <div class='fl'><img class='imgLogo uSel' src='../assets/BUILDINGLOGOpng.png'></div>
       <div class='mat-stitle'>&nbsp;&nbsp;<b>Add Building</b></div>
     </mat-card-title>
   </mat-card-header>
@@ -17,58 +17,63 @@
         fxLayoutGap.xs='20px' fxLayoutGap.sm='20px'>
         <div class="divCard brdr brdrBtm" fxFlex='100%'>
           <div class="divHeader"></div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin">
             <!-- Transaction Code -->
-            <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%' fxLayoutGap.xs='20px'>
-              <div fxFlex='25%'>
-                <mat-form-field fxFlex='100%'>
+            <div class='container' fxLayout fxLayout.xs='column' fxLayout.sm='column' fxLayoutAlign='center' fxLayoutGap='20px' fxLayoutGap.xs='20px' fxLayoutGap.sm='20px'>
+              <div fxFlex='50%' fxLayoutGap='20px'>
+                <mat-form-field fxFlex='50%' class='item item-1'>
                   <mat-label>Transaction Code</mat-label>
                   <mat-select formControlName='bldgCode' required>
                     <mat-option *ngFor='let bldg of bldgOpt' [value]='bldg.value'>{{ bldg.viewVal }}</mat-option>
                   </mat-select>
                 </mat-form-field>
-              </div>
-              <div fxFlex='25%'>
-                <mat-form-field fxFlex='100%'>
+
+                <mat-form-field fxFlex='50%' class='item item-2'>
                     <input matInput type='text' placeholder='ARP No.' formControlName='arpNo' required>
                   </mat-form-field>
               </div>
-              <div fxFlex='46%'>
-                <div formGroupName='pin' class='item item-2' fxFlex='100%'>
+              
+              <div fxFlex='50%' class="item item-1" fxLayoutGap='2px'>
+                <div formGroupName='pin' class='item item-2' fxFlex='70%'>
                   <span>PIN* </span>
                   <mat-form-field class='width-10'>
                     <input matInput type='text' formControlName='city' required>
                   </mat-form-field>
 
-                  <span>-</span>
+                  <span class='uSel'>-</span>
                   <mat-form-field class='width-10'>
                     <input matInput type='text' formControlName='district' required>
                   </mat-form-field>
 
-                  <span>-</span>
+                  <span class='uSel'>-</span>
                   <mat-form-field class='width-10'>
                     <input matInput type='text' formControlName='barangay' required>
                   </mat-form-field>
 
-                  <span>-</span>
+                  <span class='uSel'>-</span>
                   <mat-form-field class='width-10'>
                     <input matInput type='text' formControlName='section' required>
                   </mat-form-field>
 
-                  <span>-</span>
+                  <span class='uSel'>-</span>
                   <mat-form-field class='width-10'>
                     <input matInput type='text' formControlName='parcel' required>
                   </mat-form-field>
+                </div>
+                <div formGroupName='pin' class='item item-2' fxFlex='30%' fxLayoutGap='3px'>
+                  <div fxFlex='106px' class="item item-1">
+                    <div class="btnCon" (mousedown)='cp=true' (mouseup)='cp=false' (mouseleave)='cp=false' (click)="chckPIN(bldgAssessment.get('pin'))">
+                      <button class="cpBrdr" type='button' mat-raised-button color='primary' [ngClass]="{'addBtnMU': !cp, 'cpBtn': cp}">Check PIN</button>
+                    </div>
+                  </div>
 
-                  <span>&nbsp;&nbsp;&nbsp;</span>
-                  <button class="cpBrdr" type='button' mat-raised-button color='primary' (click)="chckPIN(bldgAssessment.get('pin'))">Check PIN</button>
-                  <span>&nbsp;&nbsp;&nbsp;</span>
+                  <div fxFlex='auto' class="item item-2">
                   <span>
                     <!-- spinner -->
                     <span class="spinnerCon">
-                      <mat-icon>{{ checkpinresult }}</mat-icon>
-                    <div class="sk-fading-circle spnrMl" *ngIf='isVisible_spinner'>
+                      <mat-icon class="uSel">{{ checkpinresult }}</mat-icon>
+                    <div class="uSel" class="sk-fading-circle spnrMl" *ngIf='isVisible_spinner'>
                       <div class="sk-circle1 sk-circle"></div>
                       <div class="sk-circle2 sk-circle"></div>
                       <div class="sk-circle3 sk-circle"></div>
@@ -85,14 +90,15 @@
                     </span>
                     <!-- spinner end -->
                   </span>
+                  </div>
                 </div>
               </div>
             </div>
-            <br>
+            <br class="uSel">
             <!-- Transaction Code End -->
 
           </div>
-          <br>
+          <br class="uSel">
         </div>
       </div>
       <div class="h"></div>
@@ -102,7 +108,7 @@
         <!-- Owner Details -->
         <div class="divCard brdr" fxFlex='50%'>
           <div class="divHeader">&nbsp;&nbsp;Owner Details</div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin">
           <mat-card-content formGroupName='ownerDetails'>
             <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%'
@@ -141,7 +147,7 @@
                 <button mat-raised-button type='button' class='item item-3' color='primary' [ngClass]="{'addBtnMU': !ownAdd, 'addBtnMD': ownAdd}">Add</button>
               </div>
             </div>
-            <br>
+            <br class="uSel">
 
             <div class='containerX' fxLayout fxLayout.xs='column' fxLayoutAlign='center'>
             <div class="owner-table" fxFlex='100%'>
@@ -185,14 +191,14 @@
             </div>
           </mat-card-content>
           </div>
-          <br>
+          <br class="uSel">
         </div>
         <!-- Owner Details End -->
 
         <!-- Admin -->
         <div class="divCard brdr" fxFlex='50%'>
           <div class="divHeader">&nbsp;&nbsp;Administrator / Benificial User</div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin">
           <mat-card-content formGroupName='adminOwnerLs'>
           <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%'
@@ -232,7 +238,7 @@
            <button mat-raised-button type='button' class='item item-3' color='primary' [ngClass]="{'addBtnMD': adminAdd, 'addBtnMU': !adminAdd}">Add</button>
           </div>
         </div>
-        <br>
+        <br class="uSel">
 
         <div class='containerX' fxLayout fxLayout.xs='column' fxLayoutAlign='center'>
           <div class="owner-table" fxFlex='100%'>
@@ -276,7 +282,7 @@
         </div>
         </mat-card-content>
         </div>
-        <br>
+        <br class="uSel">
         </div>
         <!-- Admin End -->
 
@@ -289,7 +295,7 @@
         <!-- Building Location -->
         <div class="divCard brdr" fxFlex='50%'>
           <div class="divHeader">&nbsp;&nbsp;Building Location</div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin">
             <mat-card-content formGroupName='buildingLoc'>
             <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%'
@@ -328,14 +334,14 @@
           </div>
           </mat-card-content>
           </div>
-          <br>
+          <br class="uSel">
         </div>
         <!-- Building Location End -->
 
         <!-- Land Reference -->
         <div class="divCard brdr" fxFlex='50%'>
           <div class="divHeader">&nbsp;&nbsp;Land Reference</div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin">
             <mat-card-content formGroupName='landRef'>
               <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='10px'
@@ -382,7 +388,7 @@
               </div>
             </mat-card-content>
           </div>
-          <br>
+          <br class="uSel">
         </div>
         <!-- Land Reference End -->
       </div>
@@ -393,7 +399,7 @@
       <!-- General Description -->
       <div class="divCard brdr" fxFlex='100%'>
         <div class="divHeader">&nbsp;&nbsp;General Description</div>
-        <br>
+        <br class="uSel">
         <div class="cardMargin">
           <mat-card-content formGroupName='genDescG'>
             <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%'
@@ -475,7 +481,7 @@
 
           </mat-card-content>
         </div>
-        <br>
+        <br class="uSel">
       </div>
       <!-- General Description End -->
       </div>
@@ -486,14 +492,14 @@
         fxLayoutGap.xs='20px' fxLayoutGap.sm='20px'>
         <div class="divCard brdr" fxFlex='100%'>
           <div class="divHeader">&nbsp;&nbsp;Structural Description</div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin" formGroupName='strDescG'>
             <div class='container' fxLayout fxLayout.xs='column' fxLayout.sm='column' fxLayoutAlign='center' fxLayoutGap='10px'
               fxLayoutGap.xs='10px' fxLayoutGap.sm='10px'>
               <!-- Area -->
               <div class="divCard2" fxFlex='25%'>
                 <div class="divHeader">&nbsp;&nbsp;Area</div>
-                <br>
+                <br class="uSel">
                 <div class="cardMargin">
                   <mat-card-content>
                     <div class='container' fxLayout fxLayout.xs='column' fxLayout fxLayout.sm='column' fxLayoutAlign='center' fxLayoutGap='10px'
@@ -555,14 +561,14 @@
 
                   </mat-card-content>
                 </div>
-                <br>
+                <br class="uSel">
               </div>
               <!-- Area -->
 
               <!-- Roof -->
               <div class="divCard2" fxFlex='25%'>
                 <div class="divHeader">&nbsp;&nbsp;Roof</div>
-                <br>
+                <br class="uSel">
                 <div class="cardMargin">
                   <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
                     <mat-form-field class="item item-1" fxFlex="100%">
@@ -587,14 +593,14 @@
                     </mat-form-field>
                   </div>
                 </div>
-                <br>
+                <br class="uSel">
               </div>
               <!-- Roof End -->
 
               <!-- Flooring -->
               <div class="divCard2" fxFlex='25%'>
                 <div class="divHeader">&nbsp;&nbsp;Flooring</div>
-                <br>
+                <br class="uSel">
                 <div class="cardMargin">
                   <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='left' fxLayoutGap='10px'
                   fxLayoutGap.xs='10px'>
@@ -657,14 +663,14 @@
                     </div>
                   </div>
                 </div>
-                <br>
+                <br class="uSel">
               </div>
               <!-- Flooring End -->
 
               <!-- Walls and Partitions -->
               <div class="divCard2" fxFlex='25%'>
                 <div class="divHeader">&nbsp;&nbsp;Walls and Partitions</div>
-                <br>
+                <br class="uSel">
                 <div class="cardMargin">
                   <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='left' fxLayoutGap='10px'
                   fxLayoutGap.xs='10px'>
@@ -730,11 +736,11 @@
                     </div>
                   </div>
                 </div>
-                <br>
+                <br class="uSel">
               </div>
               <!-- Walls and Partitions End -->
             </div>
-            <br>
+            <br class="uSel">
           <!---------------- ------------------>
           <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%'
             fxLayoutGap.xs='10px'>
@@ -827,11 +833,11 @@
             </div>
           </div>
           <!---------------- ------------------>
-          <br>
+          <br class="uSel">
           <!-- structural desc Table -->
           <div class="dashedHr"></div>
           <div class="h"></div>
-          <br>
+          <br class="uSel">
           <div>
             <div class='containerX' fxLayout fxLayout.xs='column' fxLayoutAlign='center'>
               <table mat-table class='mat-elevation-z0 owner-table item item-1' fxFlex='100%'>
@@ -887,11 +893,11 @@
               <div fxFlex='25%'></div>
             </div>
           </div>
-          <br>
+          <br class="uSel">
           <!-- structural desc Table End -->
 
           </div>
-          <br>
+          <br class="uSel">
         </div>
       </div>
       <!-- Structural Description End -->
@@ -901,7 +907,7 @@
         <!-- Additional Items -->
         <div class="divCard brdr" fxFlex='50%'>
           <div class="divHeader">&nbsp;&nbsp;Additional Items</div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin">
             <div fxFlex='100%' formGroupName='additionalItems'>
               <div>
@@ -955,7 +961,7 @@
                 </div>
               </div>
               </div>
-              <br><br>
+              <br class="uSel"><br class="uSel">
               <!--aiTable-->
                     <div class='containerX' fxLayout fxLayout.xs='column' fxLayoutAlign='center'>
                       <div class="owner-table" fxFlex='100%'>
@@ -1002,21 +1008,21 @@
 
             </div>
           </div>
-          <br>
+          <br class="uSel">
         </div>
         <!-- Additional Items End -->
 
         <!-- Property Appraisal -->
         <div class="divCard brdr" fxFlex='50%'>
           <div class="divHeader">&nbsp;&nbsp;Property Appraisal</div>
-          <br>
+          <br class="uSel">
           <div class="cardMargin">
             <mat-card-content formGroupName='propertyAppraisal'>
                     <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='10px'
                       fxLayoutGap.xs='10px'>
                       <div class='item item-1' fxFlex='100%'>
                         <mat-checkbox formControlName='unPainted'>Unpainted</mat-checkbox>
-                        &nbsp;&nbsp;
+                        <span class="uSel">&nbsp;&nbsp;</span>
                         <mat-checkbox formControlName='scndhndMat'>Second Hand Material</mat-checkbox>
                       </div>
                     </div>
@@ -1044,7 +1050,7 @@
                       </div>
                       <div class="item item-2" fxFlex="34%"></div>
                     </div>
-                    <br>
+                    <br class="uSel">
 
                     <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%'
                       fxLayoutGap.xs='10px'>
@@ -1081,7 +1087,7 @@
                       </div>
                     </div>
 
-                    <br>
+                    <br class="uSel">
                     <span>Depreciation</span>
                     <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='2%'
                       fxLayoutGap.xs='10px'>
@@ -1113,7 +1119,7 @@
 
                   </mat-card-content>
           </div>
-          <br>
+          <br class="uSel">
         </div>
         <!-- Property Appraisal End -->
       </div>
@@ -1123,7 +1129,7 @@
           <!-- Property Assessment -->
           <div class="divCard brdr" fxFlex='60%'>
             <div class="divHeader">&nbsp;&nbsp;Property Assessment</div>
-            <br>
+            <br class="uSel">
             <div class="cardMargin">
               <mat-card-content formGroupName='propertyAssessment'>
 
@@ -1258,7 +1264,7 @@
                 </div>
 
               </div>
-            <br>
+            <br class="uSel">
             <div class="">
               Memoranda*
               <div>
@@ -1270,14 +1276,14 @@
             </div>
           </mat-card-content>
             </div>
-            <br>
+            <br class="uSel">
           </div>
           <!-- Property Assessment End -->
 
           <!-- rsa -->
           <div class="divCard brdr" fxFlex='40%'>
             <div class="divHeader">&nbsp;&nbsp;Record of Superseded Assessment</div>
-            <br>
+            <br class="uSel">
             <div class="cardMargin">
               <mat-card-content formGroupName='rsa'>
             <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='10px'
@@ -1342,17 +1348,17 @@
 
           </mat-card-content>
             </div>
-            <br>
+            <br class="uSel">
           </div>
           <!-- rsa end -->
       </div>
-      <br>
+      <br class="uSel">
     <mat-card-actions align='center'>
       <div class='container' fxLayout fxLayoutAlign='center' fxLayoutGap='20px'>
-      <div fxFlex='15%' (mousedown)='sveBtn=true' (mouseup)='sveBtn=false' (mouseleave)='sveBtn=false'>
+      <div class="btnCon btnW" (mousedown)='sveBtn=true' (mouseup)='sveBtn=false' (mouseleave)='sveBtn=false'>
         <button mat-raised-button color='primary' type='submit' [ngClass]="{'applyBtn': sveBtn, 'addBtnMU': !sveBtn}">Save</button>
       </div>
-      <div fxFlex='15%' (mousedown)='clrBtn=true' (mouseup)='clrBtn=false' (mouseleave)='clrBtn=false'>
+      <div class="btnCon btnW" (mousedown)='clrBtn=true' (mouseup)='clrBtn=false' (mouseleave)='clrBtn=false'>
         <button mat-raised-button color='warn' [ngClass]="{'clrBtnMD': clrBtn, 'clrBtnMU': !clrBtn}">Clear</button>
       </div>
       </div>

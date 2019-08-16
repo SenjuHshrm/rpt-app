@@ -337,7 +337,7 @@ export class ClearanceComponent implements OnInit {
     var pos = -clientHeight - 1100;
     var id = setInterval(frame, 0.1);
     function frame() {
-        if (pos >= 300) {
+        if (pos >= 50) {
           clearInterval(id);
         } else {
           pos+=23;
@@ -354,7 +354,7 @@ export class ClearanceComponent implements OnInit {
     var clrDb = document.getElementById("clrnce_db");
     var bckgrnd = document.getElementById("bgOverlay");
     var clientHeight2 = document.getElementById('clrnce_db').clientHeight;
-    var clientHeight = 300;
+    var clientHeight = 50;
     var id = setInterval(frame, 0.1);
     function frame() {
       //

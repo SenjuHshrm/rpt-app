@@ -1,4 +1,4 @@
-.width-10 { width: 10%; text-align: center;}
+.width-10 { width: 17%; text-align: center;}
 
 .mat-card-subtitle { color: black }
 .bldg-assessment-form { margin: 20px 30px 20px 30px }
@@ -39,9 +39,29 @@ tr {
   margin-bottom: 40px;
 }
 
+.btnCon {
+  height: 40px;
+}
+
+.btnW {
+  width: 15%;
+}
+
+@media (max-width: 1179px) {
+  .width-10 {
+    width: 15%;
+  }
+}
+
 @media (max-width: 1101px) {
   .wrapper {
     width: 95%;
+  }
+}
+
+@media (max-width: 900px){
+  .btnW {
+    width: 20%;
   }
 }
 
@@ -53,6 +73,12 @@ tr {
 
 @media (max-width: 701px){
   .fsize { font-size: 11px; }
+}
+
+@media (max-width: 600px) {
+  .btnW {
+    width: 30%;
+  }
 }
 
 .divCard {
@@ -119,6 +145,7 @@ tr {
   width: 100%;
   height: 100%;
   border: 1px solid #0058CF;
+  transition: .1s;
 }
 
 .addBtnMD {
@@ -127,6 +154,7 @@ tr {
   margin-left: 5%;
   font-size: 11px;
   border: 1px solid #0058CF;
+  transition: .1s;
 }
 
 .applyBtn {
@@ -135,6 +163,7 @@ tr {
   margin-left: 5%;
   font-size: 11px;
   border: 1px solid #0058CF;
+  transition: .1s;
 }
 
 .clrBtnMD {
@@ -143,12 +172,14 @@ tr {
   margin-left: 5%;
   font-size: 11px;
   border: 1px solid #F00;
+  transition: .1s;
 }
 
 .clrBtnMU {
   width: 100%;
   height: 100%;
   border: 1px solid #F00;
+  transition: .1s;
 }
 
 .mt-60 {
@@ -162,7 +193,8 @@ tr {
 }
 
 .spnrMl {
-  margin-left: 11px;
+  margin-left: 2px;
+  margin-top: 1px;
 }
 
 .sk-fading-circle {
@@ -334,3 +366,12 @@ tr {
 .delCol { width: 50px; }
 .conCol { width: 100px; }
 .addrssCol { width: 300px; }
+.uSel { user-select: none; }
+.cpBtn {
+  width: 90%;
+  height: 90%;
+  margin-top: 1px;
+  margin-left: 5%;
+  font-size: 11px;
+  transition: .1s;
+}
