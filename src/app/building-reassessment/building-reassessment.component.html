@@ -33,7 +33,7 @@
                     <input matInput type='text' placeholder='ARP No.' formControlName='arpNo' required>
                   </mat-form-field>
               </div>
-            
+
               <div fxFlex='50%' class="item item-1" fxLayoutGap='2px'>
                 <div formGroupName='pin' class='item item-2' fxFlex='100%'>
                   <span>PIN* </span>
@@ -72,8 +72,8 @@
                   <span>
                     <!-- spinner -->
                     <span class="spinnerCon">
-                      <mat-icon>{{ checkpinresult }}</mat-icon>
-                    <div class="sk-fading-circle spnrMl" *ngIf='isVisible_spinner'>
+                      <mat-icon class="uSel">{{ checkpinresult }}</mat-icon>
+                    <div class="sk-fading-circle spnrMl uSel" *ngIf='isVisible_spinner'>
                       <div class="sk-circle1 sk-circle"></div>
                       <div class="sk-circle2 sk-circle"></div>
                       <div class="sk-circle3 sk-circle"></div>

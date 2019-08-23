@@ -18,7 +18,7 @@
 <div class='dbBGoverlay' id='bgOverlay'>
 <div class="searchDB" id='search_db'>
   <div class='container' fxLayout='column' fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
-    <div class="divHeader">&nbsp;&nbsp;Land Tax Clearance</div>
+    <div class="divHeader">&nbsp;&nbsp;RPTOP</div>
     <div>
       <b>&nbsp;&nbsp;Search</b>
     </div>
@@ -42,7 +42,7 @@
 
     <div class='container' fxLayout fxLayoutGap='10px'>
       <div fxFlex='40%'></div>
-      <div class="h-40" fxFlex='30%' (mousedown)="clicked=true" (mouseup)="clicked=false" (mouseleave)="clicked=false" (click)='search();'>
+      <div class="h-40" fxFlex='30%' (mousedown)="clicked=true" (mouseup)="clicked=false" (mouseleave)="clicked=false" (click)='search()'>
         <button mat-raised-button class='item item-1' color='primary' [ngClass]="{ 'srchBtnClckd': clicked, 'srchBtnDefault': !clicked }">Search</button>
       </div>
       <div class="h-40" fxFlex='30%' (mousedown)="clseDb=true" (mouseup)="clseDb=false" (mouseleave)="clseDb=false" (click)='srchClse()'>
@@ -84,14 +84,18 @@
 </div>
 
 <div class="wrapper">
-  <br>
-  <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
-    <div fxFlex='65%'>
-      <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayout.xs='10px'>
-        <div class='ltax-con item item-1' fxFlex='100%'>
-          <mat-label class="label">Land Info</mat-label>
+  <br class="uSel">
+  <div [ngClass]="{'tbleGrid' : !expnded, 'tbleGrid2' : expnded }">
+    <div>
+          <mat-label class="label">
+            <p id="info">
+              Land Info
+              <mat-icon class="uSel lrArrow" (click)='expndTble()'>{{ lrArrow }}</mat-icon>
+            </p>
+          </mat-label>
           <div class="h"></div>
-          <table mat-table class='mat-elevation-z0' [dataSource]='LTTable' width='2200px'>
+        <div class='ltax-con'>
+          <table mat-table class='mat-elevation-z0' [dataSource]='LTTable' width='1700px'>
             <ng-container matColumnDef='arpNo'>
               <th *matHeaderCellDef>ARP No.</th>
               <td *matCellDef='let data'>{{ data.arpNo }}</td>
@@ -155,17 +159,16 @@
             <tr mat-header-row *matHeaderRowDef='lTaxHeader'></tr>
             <tr mat-row *matRowDef='let row; columns: lTaxHeader'></tr>
           </table>
-        </div>
       </div>
     </div>
 
-    <div fxFlex='35%'>
-      <div class='container' fxLayout='column' fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
-        <div fxFlex='100%'>
+    <div>
+      <div [ngClass]="{'ownadmnGrid' : !expnded, 'ownadmnGrid2' : expnded}">
+        <div>
           <!-- Owner Info -->
-        <div class='ltax-con-inf item item-1' fxFlex='100%'>
-          <mat-label class="label">Owner info</mat-label>
+          <mat-label class="label">Owner Info</mat-label>
           <div class="h"></div>
+        <div class='ltax-con-inf'>
           <table mat-table class='mat-elevation-z0' [dataSource]='LTTableInfOwn'>
             <ng-container matColumnDef='ownName'>
               <th *matHeaderCellDef>Name</th>
@@ -189,11 +192,11 @@
         </div>
         </div>
 
-        <div fxFlex='100%'>
+        <div>
           <!-- Admin Info -->
-        <div class='ltax-con-inf item item-2' fxFlex='100%'>
-          <mat-label class="label">Admin info</mat-label>
+          <mat-label class="label">Admin Info</mat-label>
           <div class="h"></div>
+        <div class='ltax-con-inf'>
           <table mat-table class='mat-elevation-z0' [dataSource]='LTTableInfAdm'>
             <ng-container matColumnDef='admName'>
               <th *matHeaderCellDef>Name</th>
@@ -220,12 +223,12 @@
     </div>
   </div>
 
-<br>
+<br class="uSel">
 
-  <br>
+  <br class="uSel">
   <div class="divCard">
     <div class="divHeader">&nbsp;&nbsp;Computations</div>
-    <br><div class="h"></div>
+    <br class="uSel"><div class="h"></div>
     <div class='cardMargin'>
   <!--Computations-->
   <div class="container" fxLayout='column' fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
@@ -242,7 +245,7 @@
 
       <button mat-raised-button class='item item-3' fxFlex='50%' color='primary' (click)='addCompYear();'>Add</button>
     </div>
-    <br><br>
+    <br class="uSel"><br class="uSel">
     <!---->
 
     <table mat-table class='mat-elevation-z0' [dataSource]='LTTableRptopComp'>
@@ -268,7 +271,7 @@
     <div class="h" color=''></div>
   </div>
   </div>
-  <br>
+  <br class="uSel">
   </div>
 </div>
-<br><br>
+<br class="uSel"><br class="uSel">

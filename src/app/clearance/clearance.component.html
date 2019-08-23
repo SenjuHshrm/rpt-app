@@ -202,14 +202,18 @@
 <div class="wrapper">
   <br>
 
-  <div class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
-    <div fxFlex='65%'>
+  <div [ngClass]="{'tbleGrid' : !expnded, 'tbleGrid2' : expnded }">
+    <div>
       <!-- Land Info -->
-      <mat-label class="label"><p id="info">{{ param1 }} Info</p></mat-label>
+      <mat-label class="label">
+        <p id="info">{{ param1 }} Info
+        <mat-icon class="uSel lrArrow" (click)='expndTble()'>{{ lrArrow }}</mat-icon>
+        </p>
+      </mat-label>
       <div *ngIf="(param1=='land')" class='container tbleBrdr' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayout.xs='10px'>
-        <div class='ltax-con item item-1' fxFlex='100%'>
+        <div class="ltax-con">
           <div class="h"></div>
-          <table mat-table class='mat-elevation-z0' [dataSource]='LTTable' width='2000px'>
+          <table mat-table class='mat-elevation-z0' [dataSource]='LTTable' width='1700px'>
             <ng-container matColumnDef='arpNo'>
               <th *matHeaderCellDef>ARP No.</th>
               <td *matCellDef='let data'>{{ data.arpNo }}</td>
@@ -281,10 +285,9 @@
 
       <!-- Bldg Info -->
       <div *ngIf="(param1=='building')" class='container' fxLayout fxLayout.xs='column' fxLayoutGap='10px' fxLayout.xs='10px'>
-        <div class='ltax-con item item-1' fxFlex='100%'>
-          <!--<label class="label">Building Info</label>-->
+        <div class='ltax-con'>
           <div class="h"></div>
-          <table mat-table class='mat-elevation-z0' [dataSource]='LTTableBldg' width='2000px'>
+          <table mat-table class='mat-elevation-z0' [dataSource]='LTTableBldg' width='1700px'>
             <ng-container matColumnDef='arpNo'>
               <th *matHeaderCellDef>ARP No.</th>
               <td *matCellDef='let data'>{{ data.arpNo }}</td>
@@ -347,12 +350,13 @@
       <!-- Bldg Info End -->
     </div>
 
-    <div fxFlex='35%'>
-      <div class='container' fxLayout='column' fxLayout.xs='column' fxLayoutGap='10px' fxLayoutGap.xs='10px'>
+    <div [ngClass]="{'ownadmnGrid' : !expnded, 'ownadmnGrid2' : expnded}">
+      <div>
         <!-- Owner Info -->
         <mat-label class="label">Owner Info</mat-label>
-        <div class="label" fxFlex='100%'>
-          <div class='ltax-con-inf item item-1' fxFlex='100%'>
+        <div class="h"></div>
+        <div class="label">
+          <div class='ltax-con-inf'>
             <table mat-table class='mat-elevation-z0' [dataSource]='LTTableInfOwn'>
               <ng-container matColumnDef='ownName'>
                 <th *matHeaderCellDef>Name</th>
@@ -375,12 +379,15 @@
             </table>
           </div>
         </div>
+      </div>
         <!-- Owner Info End -->
 
         <!-- Admin Info -->
-        <mat-label class='label'>Admin Info</mat-label>
-        <div class="label" fxFlex='100%'>
-          <div class='ltax-con-inf item item-2' fxFlex='100%'>
+      <div>
+        <div>
+          <mat-label class='label'>Admin Info</mat-label>
+          <div class="h"></div>
+          <div class='ltax-con-inf'>
             <table mat-table class='mat-elevation-z0' [dataSource]='LTTableInfAdm'>
               <ng-container matColumnDef='admName'>
                 <th *matHeaderCellDef>Name</th>

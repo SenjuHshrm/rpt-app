@@ -681,6 +681,23 @@ export class FaasRecComponent implements OnInit {
 		this.genFaasBtn = false;
 	}
 
+  expnded: boolean;
+  lrArrow: any = 'arrow_right';
+  expndTble() {
+    //var flxId = document.getElementById('ownAdmnInfo');
+    this.expnded = !this.expnded;
+    if(this.expnded == true) {
+      this.lrArrow = 'arrow_left'
+      //flxId.style.display = 'none';
+    }
+    else {
+      this.lrArrow = 'arrow_right'
+      //setTimeout(function(){
+        //flxId.style.display = 'block';
+      //}, 100);
+    }
+  }
+
 }
 
 @Component({

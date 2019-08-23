@@ -455,6 +455,18 @@ export class ClearanceComponent implements OnInit {
 		this.clrnceBtn = false;
 	}
 
+  expnded: boolean;
+  lrArrow: any = 'arrow_right';
+  expndTble() {
+    this.expnded = !this.expnded;
+    if(this.expnded == true) {
+      this.lrArrow = 'arrow_left'
+    }
+    else {
+      this.lrArrow = 'arrow_right'
+    }
+  }
+
 }
 
 @Component({

@@ -51,7 +51,7 @@ export class RPTOPComponent implements OnInit {
 
 	clicked: boolean;
 	clseDb: boolean;
-	
+
 
   lTaxHeader: string[] = [
     'arpNo', 'pin', 'surveyNo', 'lotNo', 'blockNo',
@@ -102,7 +102,7 @@ export class RPTOPComponent implements OnInit {
   ];
 
 	search() {
-
+    this.isVisible_spinner = true;
 	}
 
   addCompYear(){
@@ -255,6 +255,18 @@ export class RPTOPComponent implements OnInit {
         clientHeight-=23;
         elem.style.top = clientHeight / 3 + 'px';
       }
+    }
+  }
+
+  expnded: boolean;
+  lrArrow: any = 'arrow_right';
+  expndTble() {
+    this.expnded = !this.expnded;
+    if(this.expnded == true) {
+      this.lrArrow = 'arrow_left'
+    }
+    else {
+      this.lrArrow = 'arrow_right'
     }
   }
 }
